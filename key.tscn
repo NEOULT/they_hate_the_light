@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b2n3vs0l3kktm"]
+
+[ext_resource type="Texture2D" uid="uid://icq8pihu51ut" path="res://player/sprites/key_spin/1.png" id="1_jo2lc"]
+[ext_resource type="Texture2D" uid="uid://cigmtwhqq6njc" path="res://player/sprites/key_spin/2.png" id="2_cr1a6"]
+[ext_resource type="Texture2D" uid="uid://cn4vffmoh1p6p" path="res://player/sprites/key_spin/3.png" id="3_alhm2"]
+[ext_resource type="Texture2D" uid="uid://bathwoqf3b88n" path="res://player/sprites/key_spin/4.png" id="4_thsxu"]
+[ext_resource type="Texture2D" uid="uid://dfwgg8lid0ju1" path="res://player/sprites/key_spin/5.png" id="5_h2804"]
+[ext_resource type="Texture2D" uid="uid://coist0smc6c71" path="res://player/sprites/key_spin/6.png" id="6_rxcsg"]
+[ext_resource type="Texture2D" uid="uid://16jiieiual14" path="res://player/sprites/key_spin/7.png" id="7_p66kx"]
+[ext_resource type="AudioStream" uid="uid://dd8muyqp0raa3" path="res://sounds/the-sound-of-a-key-turnin.wav" id="9_cr1a6"]
+[ext_resource type="Script" uid="uid://c8mi10wx60y7v" path="res://scripts/key.gd" id="9_tjcxd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdlab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jo2lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cr1a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_alhm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_thsxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h2804")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rxcsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p66kx")
+}],
+"loop": false,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[node name="key" type="Node2D" unique_id=532283438]
+script = ExtResource("9_tjcxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1849152542]
+sprite_frames = SubResource("SpriteFrames_kdlab")
+animation = &"spin"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1306591461]
+stream = ExtResource("9_cr1a6")

@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://3h8itkskuloo"]
 
-[ext_resource type="Texture2D" uid="uid://c8o21yle7upd8" path="res://player/sprites/walk/v2_1.png" id="1_yw30f"]
-[ext_resource type="Texture2D" uid="uid://bxskogncghnhm" path="res://player/sprites/walk/v2_2.png" id="2_qjkh3"]
-[ext_resource type="Texture2D" uid="uid://jd4fwvtjvqnj" path="res://player/sprites/walk/v2_3.png" id="3_g6k8r"]
-[ext_resource type="Texture2D" uid="uid://clhmilolbf8je" path="res://player/sprites/walk/v2_4.png" id="4_boad6"]
+[ext_resource type="Texture2D" uid="uid://de6jv4a54o168" path="res://player/sprites/J1 (2).png" id="2_qjkh3"]
 [ext_resource type="Script" uid="uid://1af6wfist7af" path="res://player/player.gd" id="5_1ow50"]
 [ext_resource type="Script" uid="uid://00nu5xqfewn6" path="res://player/scripts/components/state_machine.gd" id="6_vp3hb"]
 [ext_resource type="Script" uid="uid://chbxvuiv3psrk" path="res://player/scripts/components/input_handler.gd" id="7_n5xcc"]
@@ -13,19 +10,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_yw30f")
-}, {
-"duration": 1.0,
 "texture": ExtResource("2_qjkh3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_g6k8r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_boad6")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -38,19 +26,17 @@ script = ExtResource("5_1ow50")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=707580566]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"walk"
-autoplay = "walk"
-frame_progress = 0.27529573
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687326185]
 position = Vector2(3.1875, 9.5)
 shape = SubResource("RectangleShape2D_rgyib")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=1657448932]
 script = ExtResource("6_vp3hb")
 
-[node name="InputHandler" type="Node" parent="."]
+[node name="InputHandler" type="Node" parent="." unique_id=1841421231]
 script = ExtResource("7_n5xcc")
 
-[node name="AnimationController" type="Node" parent="."]
+[node name="AnimationController" type="Node" parent="." unique_id=1987395298]
 script = ExtResource("8_2wqcn")

@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://dlvtnyyckh028"]
 
-[ext_resource type="PackedScene" uid="uid://3h8itkskuloo" path="res://player/player.tscn" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://rjpa8u6e3mil" path="res://player/sprites/walk/v1_1.png" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://td2w21lo3nih" path="res://tablero.tscn" id="2_0xm2m"]
 
 [node name="main" type="Node2D" unique_id=2077740452]
 
-[node name="player" parent="." unique_id=1256755333 instance=ExtResource("1_ig7tw")]
-position = Vector2(519, 329)
+[node name="Tablero" parent="." unique_id=138363948 instance=ExtResource("2_0xm2m")]
+position = Vector2(-59, 1)
+scale = Vector2(1.006, 1.006)
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=2061449975]
-
-[node name="V11" type="Sprite2D" parent="." unique_id=789259077]
-position = Vector2(44, 568)
-texture = ExtResource("2_0xm2m")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2061449975]
+position = Vector2(520, 329)

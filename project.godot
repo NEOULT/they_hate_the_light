@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="They hate the light"
-run/main_scene="uid://dlvtnyyckh028"
+config/name="Sathura una aventura espacial"
+run/main_scene="uid://dp42lh77gdwpy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://game_manager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [physics]
 

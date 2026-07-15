@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://foedgjugment"]
+
+[ext_resource type="Script" uid="uid://cyd0tew4d4hb3" path="res://event_stage/event_stage.gd" id="1_8mq7h"]
+[ext_resource type="PackedScene" uid="uid://3h8itkskuloo" path="res://player/player.tscn" id="2_3r8tb"]
+[ext_resource type="Texture2D" uid="uid://citw6v45rc66m" path="res://menu/fondo_del_menu_estrellas.png" id="2_ucgvt"]
+[ext_resource type="Script" uid="uid://yuv40chef8sv" path="res://event_stage/fondo_infinito.gd" id="4_scroll"]
+
+[node name="EventStage" type="Node2D" unique_id=867333812]
+script = ExtResource("1_8mq7h")
+
+[node name="FondoInfinito" type="TextureRect" parent="." unique_id=586281841]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -535.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ucgvt")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("4_scroll")
+
+[node name="Arena" type="ColorRect" parent="." unique_id=1554620359]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="Player1" parent="." unique_id=1256614255 instance=ExtResource("2_3r8tb")]
+position = Vector2(-250, 0)
+
+[node name="Player2" parent="." unique_id=1053023645 instance=ExtResource("2_3r8tb")]
+position = Vector2(250, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=39073272]
+position = Vector2(0, 20)

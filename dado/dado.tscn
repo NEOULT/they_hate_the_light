@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dfxc1tlu1i7kp"]
+
+[ext_resource type="Texture2D" uid="uid://b70d1m5gsok0p" path="res://dado/sprites/face_1.png" id="1_face1"]
+[ext_resource type="Texture2D" uid="uid://ckvw2obc7w7tf" path="res://dado/sprites/face_2.png" id="2_face2"]
+[ext_resource type="Texture2D" uid="uid://b23t1415s7puq" path="res://dado/sprites/face_3.png" id="3_face3"]
+[ext_resource type="Texture2D" uid="uid://bcrsflv80ib5f" path="res://dado/sprites/face_4.png" id="4_face4"]
+[ext_resource type="Texture2D" uid="uid://da2q4asbrs5wb" path="res://dado/sprites/face_5.png" id="5_face5"]
+[ext_resource type="Texture2D" uid="uid://pv527s5ca077" path="res://dado/sprites/face_6.png" id="6_face6"]
+[ext_resource type="Script" uid="uid://ee1kcaau1llj" path="res://dado/dado.gd" id="7_script"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dado"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_face1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_face2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_face3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_face4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_face5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_face6")
+}],
+"loop": true,
+"name": &"shake",
+"speed": 18.0
+}]
+
+[node name="Dado" type="Node2D" unique_id=984332410]
+script = ExtResource("7_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650578256]
+sprite_frames = SubResource("SpriteFrames_dado")
+animation = &"shake"

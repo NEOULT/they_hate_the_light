@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://dp42lh77gdwpy"]
+
+[ext_resource type="Texture2D" uid="uid://b16yom0icaci0" path="res://menu/fondo_del_menu_espacio.png" id="1_espacio"]
+[ext_resource type="Texture2D" uid="uid://d3lv40otckmc6" path="res://menu/fondo_del_menu_saturno.png" id="2_5peh6"]
+[ext_resource type="Texture2D" uid="uid://cno7apelfrj7b" path="res://menu/fondo_del_menu_marte.png" id="2_kaf03"]
+[ext_resource type="Texture2D" uid="uid://1i8ab5tb8814" path="res://menu/fondo_del_menu_marco.png" id="2_marco"]
+[ext_resource type="Texture2D" uid="uid://citw6v45rc66m" path="res://menu/fondo_del_menu_estrellas.png" id="2_ucgvt"]
+[ext_resource type="Script" uid="uid://cuf2fs7kyw5rg" path="res://menu/menu_principal.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://rknwttgebbs3" path="res://menu/fondo_del_menu_tierra.png" id="4_qbxch"]
+[ext_resource type="Script" uid="uid://qo6rwqtj7u1f" path="res://menu/cometas_spawner.gd" id="5_cometas"]
+[ext_resource type="Script" uid="uid://b03i8t6afs2j3" path="res://menu/estrellas_fondo.gd" id="5_estrellas"]
+[ext_resource type="Script" uid="uid://dn0m113hkwuum" path="res://menu/marte.gd" id="5_marte"]
+[ext_resource type="Script" uid="uid://c4flbdmbaxacr" path="res://menu/saturno.gd" id="5_saturno"]
+[ext_resource type="Script" uid="uid://i2jaom7hosr0" path="res://menu/tierra.gd" id="5_tierra"]
+[ext_resource type="PackedScene" uid="uid://dduxyssnfld13" path="res://button.tscn" id="6_button"]
+[ext_resource type="AudioStream" uid="uid://d3nosy5g15g4w" path="res://menu/musica_menu_inicio.mp3" id="14_uw5et"]
+[ext_resource type="Script" uid="uid://fg3n44i4lkfq" path="res://menu/typewriter_text.gd" id="15_typewriter"]
+
+[node name="menu_principal" type="Node2D" unique_id=433437738]
+script = ExtResource("3_script")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641325784]
+
+[node name="FondoSaturno" type="TextureRect" parent="CanvasLayer" unique_id=1836777510]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 364.00006
+offset_top = -126.99997
+offset_right = 364.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(588, 544)
+mouse_filter = 2
+texture = ExtResource("2_5peh6")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("5_saturno")
+
+[node name="FondoMarte" type="TextureRect" parent="CanvasLayer" unique_id=52577561]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 393.0
+offset_top = -436.0
+offset_right = 393.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(588, 544)
+mouse_filter = 2
+texture = ExtResource("2_kaf03")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("5_marte")
+
+[node name="FondoEstrellas" type="TextureRect" parent="CanvasLayer" unique_id=643617469]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = -147.0
+offset_right = 94.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8545, 0.8079972)
+mouse_filter = 2
+texture = ExtResource("2_ucgvt")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("5_estrellas")
+
+[node name="FondoEspacio" type="TextureRect" parent="CanvasLayer" unique_id=730782453]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.99997
+offset_top = -145.0
+offset_right = 106.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8545, 0.8079972)
+mouse_filter = 2
+texture = ExtResource("1_espacio")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="FondoTierra" type="TextureRect" parent="CanvasLayer" unique_id=1387222360]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -68.00001
+offset_right = -410.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8545, 0.8079972)
+mouse_filter = 2
+texture = ExtResource("4_qbxch")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("5_tierra")
+tiempo_vuelta = 450.0
+
+[node name="FondoMarco" type="TextureRect" parent="CanvasLayer" unique_id=731195979]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_marco")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Cometas" type="Node2D" parent="CanvasLayer" unique_id=1535087009]
+z_index = 1
+script = ExtResource("5_cometas")
+max_cometas_en_pantalla = 3
+intervalo_cometas = 6.0
+duracion_vuelo = 60.0
+
+[node name="ButtonJugar" parent="CanvasLayer" unique_id=1423446970 instance=ExtResource("6_button")]
+z_index = 11
+position = Vector2(586, 348)
+scale = Vector2(0.25, 0.25)
+hover_color = Color(0.8237052, 0.6656362, 0.37462747, 1)
+
+[node name="ButtonSalir" parent="CanvasLayer" unique_id=1784643300 instance=ExtResource("6_button")]
+z_index = 11
+position = Vector2(586, 465)
+scale = Vector2(0.25, 0.25)
+button_text = "SALIR"
+hover_color = Color(0.96815413, 0.36178118, 0.32342944, 1)
+
+[node name="ButtonDeleitarse" parent="CanvasLayer" unique_id=1912345678 instance=ExtResource("6_button")]
+z_index = 11
+position = Vector2(225, 112)
+scale = Vector2(0.2, 0.2)
+button_text = "DELEITARSE"
+hover_color = Color(0.42352942, 0.60784316, 0.76862746, 1)
+
+[node name="TypewriterText" type="Node2D" parent="CanvasLayer" unique_id=634495548]
+z_index = 12
+script = ExtResource("15_typewriter")
+texto = "Presiona ESPACIO para volver"
+font_size = 36
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=2026465979]
+stream = ExtResource("14_uw5et")
+autoplay = true
+
+[node name="TransitionOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1806756152]
+z_index = 99
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

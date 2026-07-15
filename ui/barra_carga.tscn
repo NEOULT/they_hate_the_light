@@ -1,0 +1,32 @@
+[gd_scene format=3 uid=""]
+
+[ext_resource type="Script" path="res://ui/barra_carga.gd" id="1_6bmkp"]
+
+[node name="BarraCarga" type="Control"]
+custom_minimum_size = Vector2(32, 240)
+script = ExtResource("1_6bmkp")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.11, 0.11, 0.15, 1)
+
+[node name="Fill" type="ColorRect" parent="."]
+anchor_left = 0.05
+anchor_top = 1.0
+anchor_right = 0.95
+anchor_bottom = 1.0
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.82
+anchor_right = 1.0
+anchor_bottom = 1.0
+horizontal_alignment = 1
+vertical_alignment = 0
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 10
+text = "AGITE"

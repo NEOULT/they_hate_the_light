@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://td2w21lo3nih"]
+
+[ext_resource type="Texture2D" uid="uid://bdvifdtpmkily" path="res://player/sprites/tablero.png" id="1_adh7g"]
+[ext_resource type="Script" uid="uid://dfqritfig56c6" path="res://tablero.gd" id="3_c4h1y"]
+[ext_resource type="Texture2D" uid="uid://b3ijil0o2nb8n" path="res://player/sprites/ChatGPT Image 30 jun 2026, 06_37_40 p.m..png" id="4_f3rly"]
+[ext_resource type="PackedScene" uid="uid://c8qnhmfaaadd5" path="res://Ficha.tscn" id="4_rj33o"]
+[ext_resource type="Texture2D" uid="uid://cknqdepkr7p37" path="res://player/sprites/ChatGPT Image 30 jun 2026, 06_37_40 p.m.2 (1).png" id="5_f3rly"]
+[ext_resource type="PackedScene" uid="uid://b2n3vs0l3kktm" path="res://key.tscn" id="6_6gsi4"]
+[ext_resource type="PackedScene" path="res://ui/barra_carga.tscn" id="7_d4o5j"]
+[ext_resource type="PackedScene" uid="uid://dfxc1tlu1i7kp" path="res://dado/dado.tscn" id="8_keymn"]
+
+[sub_resource type="Curve2D" id="Curve2D_240ik"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 206, 163, 0, 0, 0, 0, 209, 182, 0, 0, 0, 0, 212, 208, 0, 0, 0, 0, 217, 234, 0, 0, 0, 0, 230, 256, 0, 0, 0, 0, 257, 265, 0, 0, 0, 0, 295, 266, 0, 0, 0, 0, 333, 256, 0, 0, 0, 0, 379, 240, 0, 0, 0, 0, 417, 227, 0, 0, 0, 0, 455, 213, 0, 0, 0, 0, 498, 201, 0, 0, 0, 0, 540, 199, 0, 0, 0, 0, 582, 200, 0, 0, 0, 0, 620, 199, 0, 0, 0, 0, 656, 199, 0, 0, 0, 0, 688, 195, 0, 0, 0, 0, 720, 181, 0, 0, 0, 0, 756, 166, 0, 0, 0, 0, 790, 150, 0, 0, 0, 0, 828, 132, 0, 0, 0, 0, 865, 114, 0, 0, 0, 0, 900, 97, 0, 0, 0, 0, 932, 81, -29.597551, -3.656168, 29.597551, 3.656168, 986, 68, 0, 0, 0, 0, 1011, 105, 0, 0, 0, 0, 999, 134, 0, 0, 0, 0, 989, 159, 0, 0, 0, 0, 977, 188, 0, 0, 0, 0, 975, 219, 0, 0, 0, 0, 988, 243, -30.990377, -29.249346, 30.990377, 29.249346, 1005, 268, 4.178478, -24.026247, -4.178478, 24.026247, 1012, 321, 0, 0, 0, 0, 937, 325, 0, 0, 0, 0, 896, 318, 0, 0, 0, 0, 854, 311, 0, 0, 0, 0, 813, 302, 0, 0, 0, 0, 771, 295, 0, 0, 0, 0, 734, 288, 0, 0, 0, 0, 694, 282, 0, 0, 0, 0, 656, 276, 0, 0, 0, 0, 619, 277, 0, 0, 0, 0, 588, 297, 0, 0, 0, 0, 555, 327, 0, 0, 0, 0, 526, 355, 0, 0, 0, 0, 497, 381, 0, 0, 0, 0, 431, 443, 0, 0, 0, 0, 389, 473, 0, 0, 0, 0, 351, 502, 0, 0, 0, 0, 323, 522, 0, 0, 0, 0, 291, 532, 0, 0, 0, 0, 245, 542, 0, 0, 0, 0, 199, 540, 0, 0, 0, 0, 159, 534, 0, 0, 0, 0, 119, 517, 0, 0, 0, 0, 89, 490, 0, 0, 0, 0, 67, 451, 0, 0, 0, 0, 68, 408, 0, 0, 0, 0, 87, 373, 0, 0, 0, 0, 113, 345, 0, 0, 0, 0, 145, 324, 0, 0, 0, 0, 189, 312, 0, 0, 0, 0, 229, 309, 0, 0, 0, 0, 275, 314, 0, 0, 0, 0, 315, 327, 0, 0, 0, 0, 351, 341, 0, 0, 0, 0, 391, 358, 0, 0, 0, 0, 433, 376, 0, 0, 0, 0, 464, 388, 0, 0, 0, 0, 488, 400, 0, 0, 0, 0, 522, 415, 0, 0, 0, 0, 560, 431, 0, 0, 0, 0, 594, 443, 0, 0, 0, 0, 631, 457, 0, 0, 0, 0, 674, 474, 0, 0, 0, 0, 717, 491, 0, 0, 0, 0, 756, 507, 0, 0, 0, 0, 786, 519, 0, 0, 0, 0, 823, 533, 0, 0, 0, 0, 870, 544, 0, 0, 0, 0, 920, 549, 0, 0, 0, 0, 973, 542, 0, 0, 0, 0, 1014, 522, 0, 0, 0, 0, 1038, 489, 0, 0, 0, 0, 1016, 429, 0, 0, 0, 0, 971, 387)
+}
+point_count = 86
+
+[node name="tablero" type="Node2D" unique_id=138363948]
+script = ExtResource("3_c4h1y")
+
+[node name="tablero_sprite" type="Sprite2D" parent="." unique_id=399123347]
+position = Vector2(577.5, 326)
+scale = Vector2(0.78163266, 0.60186917)
+texture = ExtResource("1_adh7g")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1702924874]
+curve = SubResource("Curve2D_240ik")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=143325452]
+position = Vector2(206, 163)
+rotation = 1.4141945
+
+[node name="Ficha" parent="Path2D/PathFollow2D" unique_id=1458963214 instance=ExtResource("4_rj33o")]
+position = Vector2(5.3547153, -8.266019)
+texture_override = ExtResource("4_f3rly")
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" unique_id=1922323575]
+position = Vector2(206, 163)
+rotation = 1.4141945
+
+[node name="Ficha2" parent="Path2D/PathFollow2D2" unique_id=187636404 instance=ExtResource("4_rj33o")]
+position = Vector2(-2.4954007, 35.039593)
+texture_override = ExtResource("5_f3rly")
+sprite_scale_override = Vector2(0.14, 0.18)
+
+[node name="Node2D" parent="." unique_id=532283438 instance=ExtResource("6_6gsi4")]
+position = Vector2(215.00002, 578)
+scale = Vector2(0.2, 0.2)
+
+[node name="BarraAgite" parent="." unique_id=1205570203 instance=ExtResource("7_d4o5j")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1040.0
+offset_top = 200.0
+offset_right = 1040.0
+offset_bottom = 200.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Dado" parent="." unique_id=929899241 instance=ExtResource("8_keymn")]
+position = Vector2(870, 480)
+scale = Vector2(2.5, 2.5)
+
+[node name="Dado2" parent="." unique_id=315595828 instance=ExtResource("8_keymn")]
+position = Vector2(990, 480)
+scale = Vector2(2.5, 2.5)
+
+[node name="LabelTurno" type="Label" parent="."]
+position = Vector2(470, 50)
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "TURNO: JUGADOR 1"

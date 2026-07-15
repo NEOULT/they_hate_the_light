@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c8qnhmfaaadd5"]
+
+[ext_resource type="Texture2D" uid="uid://jthtqa0fv1fg" path="res://player/sprites/Ficha.png" id="1_k42ef"]
+[ext_resource type="Script" uid="uid://mmte25523c1w" path="res://scripts/ficha.gd" id="2_h3fge"]
+[ext_resource type="AudioStream" uid="" path="res://ship/sounds/sonido_nave_desplanzadose_inicio.mp3" id="3_sonido_i"]
+[ext_resource type="AudioStream" uid="" path="res://ship/sounds/sonido_nave_desplanzadose_medio.mp3" id="4_sonido_m"]
+[ext_resource type="AudioStream" uid="" path="res://ship/sounds/sonido_nave_desplanzadose_final.mp3" id="5_sonido_f"]
+
+[node name="ficha" type="Node2D" unique_id=187636404]
+script = ExtResource("2_h3fge")
+
+[node name="ficha_sprite" type="Sprite2D" parent="." unique_id=1666613311]
+position = Vector2(0, -71.84)
+scale = Vector2(0.12, 0.2)
+texture = ExtResource("1_k42ef")
+flip_h = true
+
+[node name="AudioInicio" type="AudioStreamPlayer2D" parent="." unique_id=1001]
+stream = ExtResource("3_sonido_i")
+
+[node name="AudioMedio" type="AudioStreamPlayer2D" parent="." unique_id=1002]
+stream = ExtResource("4_sonido_m")
+
+[node name="AudioFinal" type="AudioStreamPlayer2D" parent="." unique_id=1003]
+stream = ExtResource("5_sonido_f")
